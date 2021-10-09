@@ -1,13 +1,12 @@
 const express = require("express");
 const connectDB = require("./config/db");
-const app = express();
+var app = require("./server/app");
 
 // Connect to DB
 connectDB();
 
 app.get("/", (req, res) => {
-  console.log("SDF");
-  res.send("Initial setup");
+  res.send("Welcome to the HarbourX backend API's");
 });
 
 const PORT = process.env.PORT || 5000;
