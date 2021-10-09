@@ -186,16 +186,10 @@
 
 .auth-back
 {
-  /* background-image:url(../images/authphoto.jpg);
-  height:100vh;
-  background-size: cover;
-  background-position: center; */
   width: 100%;
   min-height: calc(100vh - 5rem);
   z-index: 1;
-  background: url("../images/authphoto.png");
-  background-size: cover;
-  opacity: 0.9;
+  background-color: rgb(234, 243, 225);
 }
 .auth
 {
@@ -204,6 +198,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
+  color:white;
+  border: 2px solid red;
+  background-color: black;
+  padding:30px 30px 80px 30px;
   text-align: left;
   display:flex;
   flex-direction: column;
@@ -223,15 +221,20 @@
   height:30px;
   width:400px;
   margin-top:10px;
-  box-shadow: 2px 3px 2px rgb(154, 219, 93);
+  border-radius: 10px;
+  color:rgb(10, 10, 10);
+  background-color:white;
+  box-shadow: 2px 3px 2px rgb(186, 218, 224);
 }
 
 .form-butt
 {
-  background-color: rgb(149, 216, 61);
+  color:white;
+  background-color: rgb(3, 12, 14);
   margin-top:20px;
   height:40px;
   font-size:25px;
   width: 200px;
-  box-shadow: 2px 3px 2px grey;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px rgb(186, 218, 224);
 }
