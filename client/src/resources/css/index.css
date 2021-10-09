@@ -179,3 +179,59 @@
   height: 200px;
   padding-top: 2rem;
 }
+
+
+
+/* CSS for login & Sign Up */
+
+.auth-back
+{
+  /* background-image:url(../images/authphoto.jpg);
+  height:100vh;
+  background-size: cover;
+  background-position: center; */
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  z-index: 1;
+  background: url("../images/authphoto.png");
+  background-size: cover;
+  opacity: 0.9;
+}
+.auth
+{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  text-align: left;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+.login-form
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input{
+  height:30px;
+  width:400px;
+  margin-top:10px;
+  box-shadow: 2px 3px 2px rgb(154, 219, 93);
+}
+
+.form-butt
+{
+  background-color: rgb(149, 216, 61);
+  margin-top:20px;
+  height:40px;
+  font-size:25px;
+  width: 200px;
+  box-shadow: 2px 3px 2px grey;
+}
