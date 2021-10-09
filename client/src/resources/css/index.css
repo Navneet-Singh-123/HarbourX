@@ -189,7 +189,7 @@
   width: 100%;
   min-height: calc(100vh - 5rem);
   z-index: 1;
-  background-color: rgb(234, 243, 225);
+  background-color: white;
 }
 .auth
 {
@@ -229,8 +229,8 @@
 
 .form-butt
 {
-  color:white;
-  background-color: rgb(3, 12, 14);
+  color:grey;
+  background-color: white;
   margin-top:20px;
   height:40px;
   font-size:25px;
