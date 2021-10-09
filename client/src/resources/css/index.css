@@ -188,8 +188,7 @@
 
 /* CSS for login & Sign Up */
 
-.auth-back
-{
+.auth-back {
   width: 100%;
   min-height: calc(100vh - 5rem);
   z-index: 1;
@@ -201,10 +200,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
-  color:white;
+  color: white;
   border: 2px solid white;
   background-color: black;
-  padding:30px 30px 80px 30px;
+  padding: 30px 30px 80px 30px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -219,24 +218,30 @@
   align-items: center;
 }
 
-.login-form input{
-  height:30px;
-  width:400px;
-  margin-top:10px;
+.login-form input {
+  height: 30px;
+  width: 400px;
+  margin-top: 10px;
   border-radius: 10px;
-  color:rgb(10, 10, 10);
-  background-color:white;
+  color: rgb(10, 10, 10);
+  background-color: white;
   box-shadow: 2px 3px 2px rgb(186, 218, 224);
+  outline: none;
 }
 
-.form-butt
-{
-  color:grey;
+.form-butt {
+  color: grey;
   background-color: white;
-  margin-top:20px;
-  height:40px;
-  font-size:25px;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 25px;
   width: 200px;
   border-radius: 20px;
   box-shadow: 2px 3px 2px rgb(186, 218, 224);
+  transition: all 0.2s ease-out;
+}
+.form-butt:hover {
+  color: black;
+  background-color: rgb(219, 219, 219);
+  transition: all 0.2s ease-out;
 }
