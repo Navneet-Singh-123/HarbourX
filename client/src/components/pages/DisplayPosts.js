@@ -52,18 +52,18 @@ const DisplayPosts = () => {
   }, []);
   return (
     <div className="home-posts-container">
-      {media.length == posts.length &&
+      {media.length >= posts.length &&
         posts.map((post, index) => (
           <>
             <Card style={{ width: "30rem", marginTop: "2rem" }}>
               <Card.Img variant="top" src={URL.createObjectURL(media[index])} />
               <Card.Body>
                 <Card.Title>{post["description"]}</Card.Title>
+                <br />
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
                   <Card.Text>Created By: {post["user"]["name"]}</Card.Text>
-                  
                   <Moment fromNow>{post["createdAt"]}</Moment>
                 </div>
               </Card.Body>
