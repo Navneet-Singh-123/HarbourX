@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 import { useAlert } from "react-alert";
+import axios from "axios";
 
 const JourneyForm = (props) => {
   const [data, setData] = useState({
@@ -35,16 +36,31 @@ const JourneyForm = (props) => {
     return null;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    const token = isAutheticated();
     e.preventDefault();
     if (!startDate || !endDate || !startLocation || !endLocation) {
       showAlert("Please fill all the credentials", "error");
-    } else if (!isAutheticated()) {
-      showAlert("Please Login", "error");
+    } else if (!token) {
+      showAlert("Please Login/Signup", "error");
     } else {
+      const config = {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
       try {
+        const myData = await axios.post(
+          "http://localhost:5000/journey/create",
+          data,
+          config
+        );
+        console.log(myData);
       } catch (error) {
-        showAlert(error.response.data.error, "error");
+        console.log(error);
+        showAlert(error.response, "error");
       }
     }
   };
