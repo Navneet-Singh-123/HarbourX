@@ -19,7 +19,7 @@ export default function Login({ history }) {
         [name]: value,
       };
     });
-  }
+  };
 
   const showAlert = (msg, type) => {
     alert.show(msg, { type });

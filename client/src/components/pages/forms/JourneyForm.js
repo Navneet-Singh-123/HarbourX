@@ -57,7 +57,7 @@ const JourneyForm = (props) => {
           data,
           config
         );
-        console.log(myData);
+        showAlert(myData.data.message, "success");
       } catch (error) {
         console.log(error);
         showAlert(error.response, "error");

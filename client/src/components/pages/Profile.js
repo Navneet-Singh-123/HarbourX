@@ -19,9 +19,7 @@ const Profile = () => {
             <Link to="/all-journeys" className="profile-list-items">
               All Journeys
             </Link>
-            <Link to="/all-posts" className="profile-list-items">
-              All Posts
-            </Link>
+
             <div
               className="profile-list-items"
               style={{ cursor: "pointer" }}
@@ -33,13 +31,6 @@ const Profile = () => {
               show={journeymodalShow}
               onHide={() => setJourneyModal(false)}
             />
-            <div
-              className="profile-list-items"
-              style={{ cursor: "pointer" }}
-              onClick={() => setPostModal(true)}
-            >
-              Create a Post
-            </div>
             <PostForm show={postmodalShow} onHide={() => setPostModal(false)} />
           </div>
         </div>

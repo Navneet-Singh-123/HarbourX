@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../layout/Navbar";
+import axios from "axios";
 
 const Home = () => {
+  const [posts, setPost] = useState([]);
+
+  const showAlert = (msg, type) => {
+    alert.show(msg, { type });
+  };
+
+  const getAllPosts = async () => {
+    try {
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
   return (
     <>
       <Navbar />

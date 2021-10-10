@@ -20,6 +20,11 @@ const Navbar = ({ history }) => {
   const guestLinks = () => (
     <>
       <li className="nav-item underline-effect">
+        <Link to="/profile" className="nav-links">
+          Profile
+        </Link>
+      </li>
+      <li className="nav-item underline-effect">
         <Link to="/login" className="nav-links ">
           Login
         </Link>
@@ -29,17 +34,16 @@ const Navbar = ({ history }) => {
           Sign Up
         </Link>
       </li>
-
-      <li className="nav-item underline-effect">
-        <Link to="/profile" className="nav-links">
-          Profile
-        </Link>
-      </li>
     </>
   );
 
   const authLinks = () => (
     <>
+      <li className="nav-item underline-effect">
+        <Link to="/profile" className="nav-links">
+          Profile
+        </Link>
+      </li>
       <li className="nav-item underline-effect">
         <div
           className="nav-links"
@@ -48,12 +52,6 @@ const Navbar = ({ history }) => {
         >
           Sign Out
         </div>
-      </li>
-
-      <li className="nav-item underline-effect">
-        <Link to="/profile" className="nav-links">
-          Profile
-        </Link>
       </li>
     </>
   );
