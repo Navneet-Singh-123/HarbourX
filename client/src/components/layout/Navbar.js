@@ -14,16 +14,11 @@ const Navbar = ({ history }) => {
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
     }
-    window.location.reload();
+    window.location.href = "http://localhost:3000/";
   };
 
   const guestLinks = () => (
     <>
-      <li className="nav-item underline-effect">
-        <Link to="/profile" className="nav-links">
-          Profile
-        </Link>
-      </li>
       <li className="nav-item underline-effect">
         <Link to="/login" className="nav-links ">
           Login

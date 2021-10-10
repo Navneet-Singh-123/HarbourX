@@ -122,6 +122,12 @@
   white-space: nowrap;
 }
 
+.home-posts-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 /* Profile page */
 
 .profile-container {
@@ -180,10 +186,16 @@
 }
 
 .profile-content-main {
-  border: 1px solid red;
-  text-align: center;
   height: 200px;
   padding-top: 2rem;
+  padding-left: 9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
 }
 
 /* CSS for login & Sign Up */

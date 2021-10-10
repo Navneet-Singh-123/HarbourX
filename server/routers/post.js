@@ -22,7 +22,8 @@ postrouter.get("/post/viewAllPosts", async (req, res) => {
         path: "postcomments",
         populate: { path: "user", select: { name: 1 } },
         select: { user: 1 },
-      });
+      })
+      .populate("user", { name: 1 });
 
     return res.status(200).send({
       posts,
