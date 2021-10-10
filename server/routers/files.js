@@ -14,6 +14,7 @@ conn.once("open", () => {
 });
 fileRoutes.get("/media/:filename", async (req, res) => {
   try {
+    console.log(req.params.filename);
     const file = await gfs
       .find({ filename: req.params.filename })
       .toArray((err, files) => {
