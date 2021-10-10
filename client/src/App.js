@@ -6,6 +6,7 @@ import Profile from "./components/pages/Profile";
 import Login from "./components/pages/login";
 import SignUp from "./components/pages/sign-up";
 import AllJourneys from "./components/pages/AllJourneys";
+import Post from "./components/pages/Post";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/all-journeys" component={AllJourneys} />
+          <Route exact path="/all-journeys/:id" component={Post} />
         </Switch>
       </Fragment>
     </Router>

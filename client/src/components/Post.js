@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Post = ({ post, index }) => {
   const [media, setMedia] = useState(null);
@@ -32,7 +33,14 @@ const Post = ({ post, index }) => {
       </div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h4 class="timeline-title">{post.description && post.description}</h4>
+          <Link
+            style={{ textDecoration: "none" }}
+            to={`/all-journeys/${post["id"]}`}
+          >
+            <h4 class="timeline-title">
+              {post.description && post.description}
+            </h4>
+          </Link>
           <p>
             <small class="text-muted">{post.location && post.location}</small>
           </p>

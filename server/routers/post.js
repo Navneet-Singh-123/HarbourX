@@ -6,6 +6,7 @@ const Journey = require("../models/journey");
 const Comment = require("../models/comment");
 const upload = require("../utils/upload");
 const postrouter = new express.Router();
+const { ObjectId } = require("mongodb");
 
 postrouter.get("/post/viewAllPosts", async (req, res) => {
   try {
@@ -35,8 +36,9 @@ postrouter.get("/post/viewAllPosts", async (req, res) => {
 postrouter.post("/post/viewSinglePosts", async (req, res) => {
   try {
     const { postId } = req.body;
-    if (!postId) return res.status(400).send({ error: "Post Id is required" });
-    const post = await Post.findOne({ _id: postId })
+    var id = postId.id;
+    if (!id) return res.status(400).send({ error: "Post Id is required" });
+    const post = await Post.findOne({ _id: id })
       .populate("journeyId", {
         startDate: 1,
         endDate: 1,
@@ -48,8 +50,9 @@ postrouter.post("/post/viewSinglePosts", async (req, res) => {
       .populate({
         path: "postcomments",
         populate: { path: "user", select: { name: 1 } },
-        select: { user: 1 },
-      });
+        select: { user: 1, comment: 1 },
+      })
+      .populate("user", { name: 1 });
 
     return res.status(200).send({
       post,
@@ -191,10 +194,10 @@ postrouter.post("/post/unlike", auth, async (req, res) => {
 postrouter.post("/post/comment", auth, async (req, res) => {
   try {
     const { postId } = req.body;
-    if (!postId) return res.status(400).send({ error: "Post Id is Required" });
+    const id = postId["id"];
+    if (!id) return res.status(400).send({ error: "Post Id is Required" });
     const post = await Post.findOne({
-      _id: postId,
-      user: req.user._id,
+      _id: id,
     });
     if (!post) {
       return res.status(400).send({ error: "No post found" });
